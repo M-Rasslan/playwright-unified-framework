@@ -1,0 +1,23 @@
+{
+  "name": "playwright-unified-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:env1": "cross-env ENV=env1 playwright test",
+    "test:env2": "cross-env ENV=env2 playwright test",
+    "test:env3": "cross-env ENV=env3 playwright test",
+    "show:allure": "npx allure serve allure-results"
+  },
+  "keywords": [],
+  "author": "Mahmoud Rasslan",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.3.0",
+    "allure-playwright": "^3.3.3",
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.2.1"
+  }
+}
