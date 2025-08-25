@@ -53,8 +53,7 @@ Thumbs.db
 # Playwright
 node_modules/
 /test-results/
-/playwright-report/
 /blob-report/
 /playwright/.cache/
-test-results
-allure-results
+reports/allure-results/*.json
+reports/test-results/*.json

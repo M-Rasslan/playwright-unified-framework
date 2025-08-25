@@ -7,7 +7,14 @@
     "test:env1": "cross-env ENV=env1 playwright test",
     "test:env2": "cross-env ENV=env2 playwright test",
     "test:env3": "cross-env ENV=env3 playwright test",
-    "show:allure": "npx allure serve allure-results"
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:all": "playwright test --project=chromium && playwright test --project=firefox && playwright test --project=webkit",
+    "test:firefox:env1": "cross-env NODE_ENV=env1 playwright test --project=firefox",
+    "show:allure": "npx allure serve reports/allure-results",
+    "generate:allure": "npx allure generate reports/allure-results --clean",
+    "open:allure": "npx allure open reports/allure-results"
   },
   "keywords": [],
   "author": "Mahmoud Rasslan",
