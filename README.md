@@ -330,24 +330,6 @@ const api = new apiUtils(apiContext, apiURL, authManager);
 
 ### Authentication Flow
 
-**ASCII Version (Bitbucket Compatible):**
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                           Authentication Flow                                  │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                 │
-│  Start Test → Has Auth State? → Load Auth State                               │
-│                    ↓                                                           │
-│              Perform Login → Save Auth State                                   │
-│                    ↓                                                           │
-│              Setup Test Environment → Run Test                                 │
-│                    ↓                                                           │
-│              Cleanup → End Test                                                │
-│                                                                                 │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
-
-**Mermaid Version (GitHub Compatible):**
 ```mermaid
 flowchart TD
     A[Start Test] --> B{Has Auth State?}
@@ -363,24 +345,6 @@ flowchart TD
 
 ### API Token Flow
 
-**ASCII Version (Bitbucket Compatible):**
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                           API Token Flow                                       │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                 │
-│  API Call Request → Token Cached? → Use Cached Token                           │
-│                    ↓                                                           │
-│              Fetch New Token → API Login Request                               │
-│                    ↓                                                           │
-│              Login Success? → Cache Token                                      │
-│                    ↓                                                           │
-│              Make API Call → Return Response                                   │
-│                                                                                 │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
-
-**Mermaid Version (GitHub Compatible):**
 ```mermaid
 flowchart TD
     A[API Call Request] --> B{Token Cached?}
@@ -397,26 +361,6 @@ flowchart TD
 
 ### Combined Testing Flow
 
-**ASCII Version (Bitbucket Compatible):**
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                         Combined Testing Flow                                   │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                 │
-│  Test Start → Setup AuthManager → Set API Credentials                           │
-│                    ↓                                                           │
-│              Get API Token → Setup Browser Environment                          │
-│                    ↓                                                           │
-│              Inject Token to Browser → Run UI Tests                             │
-│                    ↓                                                           │
-│              Make API Calls from Browser → Verify Results                       │
-│                    ↓                                                           │
-│              Cleanup → Test End                                                 │
-│                                                                                 │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
-
-**Mermaid Version (GitHub Compatible):**
 ```mermaid
 flowchart TD
     A[Test Start] --> B[Setup AuthManager]
